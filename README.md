@@ -1,4 +1,4 @@
-# NeuralSpoke
+# Sokn Trading Platform (STP)
 
 A modern, high-performance, orchestrated trading system architecture using a hub-and-spoke pattern, designed with Sokn Engineering's expectations in mind.
 
@@ -9,23 +9,23 @@ A modern, high-performance, orchestrated trading system architecture using a hub
 ```mermaid
 graph TD
   subgraph Hub
-    O["Orchestrator Service (Node.js, Redis)"]
+    O[Orchestrator API (Node.js, Redis)]
   end
 
   subgraph Spokes
-    U["UI Gateway (Next.js)"]
-    D["Data Processor (Python, Pandas)"]
-    M["Model Runner (Python ML/A.I.)"]
-    A["Analytics API (Node.js, REST)"]
-    C["Caching Layer (Redis)"]
+    W[Web Client (Next.js)]
+    D[Data Processor (Python, Pandas)]
+    M[Model Runner (Python ML/AI)]
+    A[Analytics API (Node.js)]
+    C[Caching Layer (Redis)]
   end
 
-  U -->|requests| O
+  W -->|requests| O
   O -->|routes| A
   O -->|schedules| D
   D -->|feeds| M
   M -->|insights| A
-  A -->|responses| O --> U
+  A -->|responses| O --> W
   A --> C
 ```
 
