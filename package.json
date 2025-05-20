@@ -1,0 +1,17 @@
+{
+  "name": "sokn-trading-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "pnpm --filter web-client dev",
+    "dev:api": "pnpm --filter orchestrator-api dev",
+    "dev": "concurrently \"pnpm dev:web\" \"pnpm dev:api\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
