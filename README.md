@@ -8,7 +8,7 @@ A modern, high-performance, orchestrated trading system architecture using a hub
 
 ```mermaid
 graph TD
-  subgraph Hub (Orchestrator)
+  subgraph Hub
     O["Orchestrator Service (Node.js, Redis)"]
   end
 
