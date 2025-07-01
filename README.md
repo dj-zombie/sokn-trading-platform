@@ -9,15 +9,15 @@ A modern, high-performance, orchestrated trading system architecture using a hub
 ```mermaid
 graph TD
   subgraph Hub
-    O[Orchestrator API (Node.js, Redis)]
+    O[Orchestrator API<br/>Node.js, Redis]
   end
 
   subgraph Spokes
-    W[Web Client (Next.js)]
-    D[Data Processor (Python, Pandas)]
-    M[Model Runner (Python ML/AI)]
-    A[Analytics API (Node.js)]
-    C[Caching Layer (Redis)]
+    W[Web Client<br/>Next.js]
+    D[Data Processor<br/>Python, Pandas]
+    M[Model Runner<br/>Python ML/AI]
+    A[Analytics API<br/>Node.js]
+    C[Caching Layer<br/>Redis]
   end
 
   W -->|requests| O
@@ -25,7 +25,8 @@ graph TD
   O -->|schedules| D
   D -->|feeds| M
   M -->|insights| A
-  A -->|responses| O --> W
+  A -->|responses| O
+  O -->|delivers| W
   A --> C
 ```
 
